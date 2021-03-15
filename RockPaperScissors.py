@@ -39,4 +39,25 @@ while gameOn == 'yes':
     print(cpuThrow)
 
     #determine winner
-
+        #determine winner
+    if realThrow(throw) == cpuThrow:
+        print ('It is a tie!')
+        ties += 1
+    elif realThrow(throw) == 'Rock' and cpuThrow == 'Scissors':
+        print ('You Win!')
+        wins += 1
+    elif realThrow(throw) == 'Paper' and cpuThrow == 'Rock':
+        print ('You Win!')
+        wins += 1
+    elif realThrow(throw) == 'Scissors' and cpuThrow == 'Paper':
+        print ('You Win!')
+        wins += 1
+    elif realThrow(throw) == 'Rock' and cpuThrow == 'Paper':
+        print ('You Lose!')
+        losses += 1
+    elif realThrow(throw) == 'Scissors' and cpuThrow == 'Rock':
+        print ('You Lose!')
+        losses += 1
+    elif realThrow(throw) == 'Paper' and cpuThrow == 'Scissors':
+        print ('You Lose!')
+        losses += 1
