@@ -1,0 +1,54 @@
+
+test = {'1h': 'bking', '6c': 'wqueen', '2d': 'bbishop', '5h': 'bqueen', '3e': 'wking'}
+
+def isValidChessBoard(chessboard):
+
+    validPieces = ['pawn', 'king', 'queen', 'bishop', 'rook', 'knight']
+    validNumbers = ['1', '2', '3', '4', '5', '6', '7', '8']
+    validLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    blackPieceSum = 0
+    whitePieceSum = 0
+    blackPawns = 0
+    whitePawns = 0
+
+    if 'bking' and 'wking' in chessboard.values():
+        pass
+    else:
+        return 'Not a valid chess board'
+
+    for each in chessboard.values():
+        if each[1:] in validPieces:
+            if each == 'bpawn':
+                blackPawns += 1
+                if blackPawns > 8:
+                    return 'Not a valid chess board'
+            if each == 'wpawn':
+                whitePawns += 1
+                if whitePawns > 8:
+                    return 'Not a valid chess board'
+        else:
+            return 'Not a valid chess board'
+    
+
+        if each[0] == 'b':
+            blackPieceSum += 1
+            if blackPieceSum > 16:
+                return 'Not a valid chess board'
+            
+        elif each[0] == 'w':
+            whitePieceSum += 1
+            if whitePieceSum > 16:
+                return 'Not a valid chess board'
+            
+        else:
+            return 'Not a valid chess board'
+        
+    for each in chessboard:
+        if each[0] not in validNumbers:
+            return 'Not a valid chess board'
+        if each[1] not in validLetters:
+            return 'Not a valid chess board'
+
+    return 'Valid chess board'
+
+print(isValidChessBoard(test))
